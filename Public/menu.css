@@ -1,0 +1,80 @@
+.column {
+  float: left;
+  width: 33.33%;
+  font-family: Freestyle Script;
+  font-weight: bold;
+}
+
+.container{
+    font-family: Arial;
+    font-weight: bold;
+    background-image: url("https://i.redd.it/5vltlvdi2dqy.jpg");
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-size: cover;
+   }
+
+.text-right{
+  position: absolute;
+  right: 0px ;
+  top: 3px;
+}
+
+.centre-text{
+  text-align: center;
+}
+
+.red{
+  color: red;
+}
+
+.green{
+  color: green;
+}
+
+.white{
+color: white;
+}
+
+.black{
+  color: black;
+  }
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+    float: left;
+  }
+ 
+.left, .right {
+    width: 25%;
+  }
+  
+  .middle {
+    width: 50%;
+  }
+
+  h1 {
+    text-align:center;
+    font-family: Freestyle Script;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+
+h2 {
+  text-align:center;
+  font-family: Freestyle Script;
+  font-weight: bold;
+  text-decoration: underline;
+  
+}
+
+h3 {
+  text-align:left;
+  font-family: Freestyle Script;
+}
+

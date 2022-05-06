@@ -1,0 +1,25 @@
+{
+  "name": "wad2lab4",
+  "version": "1.0.0",
+  "description": "These are just basic html files. You can download them and open them in a browser.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FionaMacRaeFairlie/WAD2Lab4.git"
+  },
+  "author": "Tom Hope S1311448",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FionaMacRaeFairlie/WAD2Lab4/issues"
+  },
+  "homepage": "https://github.com/FionaMacRaeFairlie/WAD2Lab4#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mustache-express": "^1.3.2",
+    "nedb": "^1.8.0",
+    "path": "^0.12.7"
+  }
+}

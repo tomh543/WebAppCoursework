@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <title>Menu Entry Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <div class="container">
+        <h1><mark class="black">Menu Form</mark></h1>
+        <h1><mark class="black">Enter a Menu Entry</mark></h1>
+        <form method="post" role="form">
+            <div class="form-group">
+                <label for="menu"><mark class ="black">Which Menu?</mark></label>
+                <select name="menutype" id="menu" required>
+                    <option value="LunchMenu">Lunch Menu</option>
+                    <option value="DinnerMenu">Dinner Menu</option>
+                    <option value="ChefSpecial">Chef's Special Item</option>
+                    
+            </div>
+            <div class="form-group">
+                <label for="DishName"><mark class ="black">Dish Name</mark></label>
+                <input type="text" class="form-control" id="DishName" name="DishName" placeholder="Enter the Dishes Name" required>
+            </div>
+            <div class="form-group">
+                <label for="Description"><mark class ="black">Description of Dish</mark></label>
+                <textarea class="form-control" id="Description" name="Description" placeholder="Enter Dish Description." rows="5" required></textarea>
+            </div>
+                <div class="form-group">
+                <div id="label" style="float: left;">
+                <label for="allergy"><mark class ="black">Allergy Info:</mark>  </label></div>
+                <select name="allergens" id="allergy" multiple required>
+                <option value="GF">Gluten Free</option>
+                <option value="VG">Vegan</option>
+                <option value="V">Vegetarian</option>
+                <option value="DF">Dairy Free</option>
+                <option value="NF">Nut Free</option>
+                <option value="SF">Sugar Free</option>
+                <option value="Na">Not Applicable</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="price"><mark class ="black">Price £</mark></label>
+            <input type="number" min="1" max="100" step="any" />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Post Menu Item" class="btn btn-primary" style="position:absolute; left:700px; top:450px;">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
