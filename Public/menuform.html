@@ -8,10 +8,10 @@
     <div class="container">
         <h1><mark class="black">Menu Form</mark></h1>
         <h1><mark class="black">Enter a Menu Entry</mark></h1>
-        <form method="post" role="form">
+        <form method="post" role="form" action="">
             <div class="form-group">
                 <label for="menu"><mark class ="black">Which Menu?</mark></label>
-                <select name="menutype" id="menu" required>
+                <select name="menu" id="menu" required>
                     <option value="LunchMenu">Lunch Menu</option>
                     <option value="DinnerMenu">Dinner Menu</option>
                     <option value="ChefSpecial">Chef's Special Item</option>
@@ -28,19 +28,19 @@
                 <div class="form-group">
                 <div id="label" style="float: left;">
                 <label for="allergy"><mark class ="black">Allergy Info:</mark>  </label></div>
-                <select name="allergens" id="allergy" multiple required>
+                <select name="allergy" id="allergy" multiple required>
                 <option value="GF">Gluten Free</option>
                 <option value="VG">Vegan</option>
                 <option value="V">Vegetarian</option>
                 <option value="DF">Dairy Free</option>
                 <option value="NF">Nut Free</option>
                 <option value="SF">Sugar Free</option>
-                <option value="Na">Not Applicable</option>
+                <option value="Na">N/A</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="price"><mark class ="black">Price £</mark></label>
-            <input type="number" min="1" max="100" step="any" />
+            <input type="number" name="price" min="1" max="100" step="any" />
             </div>
 
             <div class="form-group">

@@ -1,8 +1,15 @@
 .column {
-  float: left;
   width: 33.33%;
   font-family: Freestyle Script;
   font-weight: bold;
+}
+
+.menucontainer{
+  font-family: Freestyle Script;
+  background-image: url("https://i.redd.it/5vltlvdi2dqy.jpg");
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .container{
@@ -14,12 +21,35 @@
     background-size: cover;
    }
 
+.text-left{
+  float: left;
+}
+
+.text-right-menu{
+  float:right;
+}
 .text-right{
   position: absolute;
   right: 0px ;
   top: 3px;
 }
+.text-right2{
+  position: absolute;
+  right: 115px ;
+  top: 3px;
+}
 
+.text-right-form{
+  position: absolute;
+  right: 350px ;
+  top: 3px;
+}
+
+.bottom-right{
+  position: absolute;
+  right: 5px ;
+  bottom: 3px;
+}
 .centre-text{
   text-align: center;
 }
@@ -76,5 +106,9 @@ h2 {
 h3 {
   text-align:left;
   font-family: Freestyle Script;
+}
+
+h4{
+  float: right;
 }
 

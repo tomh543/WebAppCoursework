@@ -3,29 +3,18 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/menucontroller');
 
-/*
-router.get('/', function(req, res) {
-    res.redirect('/about.html');
-})
-router.get('/Menu', controller.menu_items);
-
-router.get('/menuform', function(req, res) {
-    res.redirect('/menuform.html');
-})
-router.get('/contact', function(req, res) {
-    res.redirect('/contact.html');
-})
-
-router.get('/about', function(req, res) {
-    res.redirect('/about.html');
-})
-*/
-
 router.get("/", controller.landing_page);
 router.get('/Menu', controller.menu_items);
 router.get('/menuform', controller.new_menu_item);
+router.post('/menuform', controller.post_new_menu_item);
 router.get('/contact', controller.contact);
 router.get('/about', controller.about);
+router.get('/lunch/:menutype', controller.show_lunch_menu);
+router.get('/specials/:menutype', controller.show_specials);
+router.get('/dinnermenu/:menutype', controller.show_dinner_menu);
+
+
+
 
 router.use(function(req, res) {
 res.status(404);

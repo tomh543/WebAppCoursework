@@ -1,0 +1,21 @@
+<html>
+    <head>{{>header2}}</head>
+    <body class="menucontainer">
+    <h1><mark class="black">{{title}}</h1>
+        <div class="row" style="background-color:rgb(255, 255, 255);">
+            {{#Menuitems}}
+                <div>
+                  <div class="text-left"><h1>{{DishName}}</div></h1>
+                  <div class="text-right-menu"><h2>£{{price}}</h2></div>
+                     </p>
+                    <div class="text-left"> <h3>{{Description}}({{allergy}})</h3></div>
+                    </div>
+
+    </mark>
+            {{/Menuitems}}
+            {{^Menuitems}}
+            No Menu Items Available Yet
+            {{/Menuitems}}
+</div>
+</body>
+</html>
