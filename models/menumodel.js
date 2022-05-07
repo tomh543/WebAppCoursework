@@ -34,10 +34,10 @@ class Menues {
             })
         }
 
-        //Retrieves all Entries from DB for when menu = LunchMenu
+        //Retrieves all Entries from DB for when menu = LunchMenu & active = true
         getLunchMenu(){
             return new Promise ((resolve, reject)=> {
-                this.db.find({'menu': 'LunchMenu'}, function(err, docs) {
+                this.db.find({'menu': 'LunchMenu','active': 'true'}, function(err, docs) {
                     if(err){
                         reject(err);
                         console.log('getMenubytype promise was rejected')
@@ -49,10 +49,10 @@ class Menues {
             })
         }
 
-        //Retrieves all Entries from DB for when menu = ChefSpecial
+        //Retrieves all Entries from DB for when menu = ChefSpecial & active = true
         getspecials(){
             return new Promise ((resolve, reject)=> {
-                this.db.find({'menu': 'ChefSpecial'}, function(err, docs) {
+                this.db.find({'menu': 'ChefSpecial','active': 'true'}, function(err, docs) {
                     if(err){
                         reject(err);
                         console.log('getMenubytype promise was rejected')
@@ -65,10 +65,10 @@ class Menues {
         }
 
 
-        //Retrieves all Entries from DB for when menu = DinnerMenu
+        //Retrieves all Entries from DB for when menu = DinnerMenu & active = true
         getdinnermenu(){
         return new Promise ((resolve, reject)=> {
-            this.db.find({'menu': 'DinnerMenu'}, function(err, docs) {
+            this.db.find({'menu': 'DinnerMenu','active': 'true'}, function(err, docs) {
                 if(err){
                     reject(err);
                     console.log('getMenubytype promise was rejected')
