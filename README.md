@@ -25,5 +25,16 @@ A template was created for each page one of these was header 1 which included th
 Header 2 was implemented for any form pages, to try and keep the background from the css.
 Header 3 was implemented for the user forms (registration and Login)
 
+Functionality:
+Navigation Bar between pages,
+Menu Pages for Lunch, CHef Special and Dinner Menus,
+Menu's dynamic depending on database entries, will replicate on the respective page only the items from that menu that are active,
+Login and Register User page, with Functionality behind login.
+Logged In user functionality - Add New Item, Update Item, Remove Item, Log Out, Menu Pages for viewing,
+Add New Item - Adds New Menu Item to database, if active field set to false will not appear on menu. If active set to true will display on the Menu selected.
+Update Item - Form template and functionality code implemented, however issues when submitting seem to prevent updating of db
+Delete Item - Form template and functionality code  implemented, however issues when submitting seem to prevent updating of db
+Log Out - Will remove authenticated cookie from user and put them back to landing page.
+
 A menu.css file was created to work in tandem with the stylesheet "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css".
 This was to give more flexibility with likes of background image and making the design similar to the design document.
