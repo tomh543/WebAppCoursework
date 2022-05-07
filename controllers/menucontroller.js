@@ -74,6 +74,8 @@ exports.post_new_menu_item= function(req,res){
 
 }
 
+
+//Renders Update Form
 exports.update_menu_item=function(req,res){
     res.render("updatemenuitem",{
         'title': 'Update Menu Item Form',
