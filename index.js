@@ -2,6 +2,12 @@
 const express = require('express');
 const app = express();
 app.use(express.urlencoded({ extended: false }));
+require('dotenv').config()// loads data from .env file for login functionality
+
+//will enable parsing of the jwt token in a cookie to be sent with requests
+const cookieParser = require('cookie-parser')
+app.use(cookieParser())
+
 
 const path = require('path');
 const public = path.join(__dirname,'Public');

@@ -1,8 +1,9 @@
 <html lang="en">
-    <head>{{>header}} 
+
+    <head>{{>header}}
             <div class="text-right">
             {{^user}}
-            <a id="login" href="/register" class="btn btn-primary">
+            <a id="register" href="/register" class="btn btn-primary">
             Register
             </a>
             <a id="login" href="/login" class="btn btn-primary">
@@ -10,18 +11,9 @@
             </a>
             </div>
             {{/user}}
-            {{#user}}
-            <div class="text-left">
-            <a id="logout" href="/logout" class="btn btn-primary">
-            Sign out
-            </a>
-            <div class="text-right2">
-            <a id="menuform" href='/menuform' class="btn btn-primary">
-            Add New Menu Item
-            </div>
-            {{/user}}
-          </head>
-     <body class="container">  
+            </head>
+      </p>
+          {{^user}}
         <h1><mark class="black">{{title}}</mark></h1>
         </p>
           <div class="row">
@@ -44,8 +36,37 @@
               <h3>{{DinnerMenuDetail}}
               </p>{{Clicktoview}}</h3></p></p></p>
                 <h3><a href='/dinnermenu/{{menu3}}'>{{menu3}}</a></h3>
+                {{/user}}
             </div>
-          </div> 
-          </p>
+     <body class="container"> 
+    <form method="post" role="form" action="/new">
+            {{#user}}
+            <a id="logout" href="/logout" class="btn btn-primary">
+            Log out
+            </a>
+
+            </p>
+            <a id="menuform" href='/lunch/{{menu1}}' class="btn btn-primary">
+            View Lunch Menu</a>
+            </p>
+            <a id="menuform" href='/specials/{{menu2}}' class="btn btn-primary">
+            View Specials Menu</a>
+            </p>
+            <a id="menuform" href='/dinnermenu/{{menu3}}' class="btn btn-primary">
+            View Dinner Menu</a>
+            </p>
+            <a id="menuform" href='/menuform' class="btn btn-primary">
+            Add New Menu Item</a>
+            </p>
+           <a id="updatemenuitem" href='/updatemenuitem' class="btn btn-primary">
+            Update Menu Item</a>
+            </p>
+            <a id="deleteitem" href='/deleteitem' class="btn btn-primary">
+            Remove Menu Item</a>
+            </p>
+
+            
+    </form>
+    {{/user}}
     </body>
 </html>

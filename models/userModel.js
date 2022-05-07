@@ -1,3 +1,5 @@
+//Imports
+
 const Datastore = require("nedb");
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
@@ -14,21 +16,19 @@ class UserDAO {
 }
 
 
-	// for the app the password is password
-	init() {
-	this.db.insert({
-	user: 'Manager',
-	password:
-	'password'
-	});
-	this.db.insert({
-	user: 'Admin',
-	password:
-	'password'
-	});
-	return this;
-    }
-
+	    // for the app the password is password for demo purposes
+	    init() {
+	        this.db.insert({
+	            user: 'Manager',
+	            password:'password'
+            });
+	        this.db.insert({
+	            user: 'Admin',
+	            password:'password'
+	            });
+	    return this;
+        }
+//creates username and password
     create(username, password) {
         const that = this;
         bcrypt.hash(password, saltRounds).then(function(hash) {
@@ -41,8 +41,9 @@ class UserDAO {
         console.log("Can't insert user: ", username);
         }
         });
-        });
-        }
+    });
+    }
+    
         lookup(user, cb) {
             this.db.find({'user': user}, function (err, entries) {
             if (err) {
@@ -56,6 +57,8 @@ class UserDAO {
             });
             }
             }
+
         const dao = new UserDAO();
         dao.init();
+        
         module.exports = dao;

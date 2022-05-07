@@ -1,0 +1,60 @@
+<html lang="en">
+<head>{{>header2}}</head>
+<body>
+    <div class="container">
+        <h1><mark class="black">{{subtitle}}</mark></h1>
+        </p>
+        <form method="post" role="form" action="">
+            <div class="form-group">
+                <label for="menu1"><mark class ="black">{{q1}}</mark></label>
+                <select name="menu1" id="menu1" required>
+                    <option value="LunchMenu">{{op1}}</option>
+                    <option value="DinnerMenu">{{op2}}</option>
+                    <option value="ChefSpecial">{{op3}}</option>
+                    </div>
+                    
+            <div class="form-group">
+            <label for="DishName1"><mark class ="black">{{q2}}</mark></label>
+            <textarea class="form-control" id="DishName1" name="DishName1" placeholder="Enter Dish Name." rows="1" required></textarea>
+            </p>
+            <div class="form-group">
+            <label for="price1"><mark class ="black">{{Price}}</mark></label>
+            <input type="number" name="price1" min="1" max="100" step="any" />
+            </div>
+            <p>
+            </p>
+                <div class="form-group">
+                <div id="label" style="float: left;">
+                <label for="allergy1"><mark class ="black">{{q4}}</mark>  </label></div>
+                <select name="allergens1" id="allergy1" multiple required>
+                <option value="GF">{{GF}}</option>
+                <option value="VG">{{VG}}</option>
+                <option value="V">{{V}}</option>
+                <option value="DF">{{DF}}</option>
+                <option value="NF">{{NF}}</option>
+                <option value="SF">{{SF}}</option>
+                <option value="Na">{{Na}}</option>
+                </div>
+                </select>
+                </p>
+
+                <div class="form-group">
+                <label for="Description1"><mark class ="black">{{q3}}</mark></label>
+                <textarea class="form-control" id="Description1" name="Description1" placeholder="Enter Dish Description." rows="3" required></textarea>
+                </div>
+            <div class="form-group">
+             <label for="active1"><mark class ="black">{{q5}}</mark></label>
+             <select name="active1" id="active1" required>
+                <option value="true">{{true}}</option>
+                <option value="false">{{false}}</option>
+             </select>
+             </div>
+            </p>
+            </p>
+            </div>
+            <div class="form-group">
+             <input type="submit" value="post menu update" class="btn btn-primary" style="position:absolute, right: 0px, bottom:3px">
+             </div>
+        </form>
+</body>
+</html>
