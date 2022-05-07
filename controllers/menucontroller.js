@@ -1,6 +1,7 @@
 
 const { init } = require('express/lib/application');
 const menuDAO = require('../models/menumodel.js');
+const userDao = require('../models/userModel.js');
 
 const db = new menuDAO();
 
@@ -36,6 +37,7 @@ exports.menu_items=function(req,res){
          });
     }
 
+//Menu Item form will be rendered with below mustache tags
 exports.new_menu_item=function(req,res){
     res.render("menuform",{
         'title': 'Menu Form',
@@ -61,6 +63,7 @@ exports.new_menu_item=function(req,res){
     });
 }
 
+//Posts new menu item to the database
 exports.post_new_menu_item= function(req,res){
     console.log('processing post_new_menu_item controller');
     db.addEntry(req.body.menu, req.body.DishName,req.body.price, req.body.Description,req.body.allergens,req.body.active);
@@ -71,6 +74,18 @@ exports.post_new_menu_item= function(req,res){
 }
 
 
+//Shows the register page
+exports.show_register_page=function(req,res){
+    res.render("user/register");
+    };
+    
+//shows login page
+exports.show_login = function(req, res) {
+    res.render("user/login");
+     };
+
+
+//shows contact page
 exports.contact=function(req,res){
     res.render("contact",{
         'title': 'Contact Us',
@@ -93,6 +108,7 @@ exports.contact=function(req,res){
     });
 }
 
+//shows about page
 exports.about=function(req,res){
     res.render("about",{
         'title': 'About Us',
@@ -105,21 +121,8 @@ exports.about=function(req,res){
          });
 }
 
-/*exports.lunch=function(req,res){
-    res.render("LunchMenu",{
-        'title': 'Lunch Menu',
-        'Menuitems':[{
-            'DishName': 'Lasagne',
-            'Description': 'Layers of lasagne pasta, Beef Bolognese with a bechamel sauce, baked in our pizza oven. Served with chips and garlic bread',
-            'allergy': 'Na',
-            'price': '12.99',
-            'active': 'true',
-            'Menuitems':list
-        }]
-});
-         };
-         */
 
+//ability to show all menu items on the lunch menu page - this was used to test db
 exports.lunch=function(req,res){
     db.getAllMenus()
         .then((list) =>{
@@ -134,7 +137,7 @@ exports.lunch=function(req,res){
         })
         }
 
-
+//shows all lunch menu items on the lunch menu
 exports.show_lunch_menu=function(req,res){
     console.log('filtering by',req.params.menutype);
         db.getLunchMenu().then((list) =>{
@@ -147,7 +150,7 @@ exports.show_lunch_menu=function(req,res){
         });       
 }
 
-
+//shows all chef specials on the Chef Special Menu
 exports.show_specials=function(req,res){
     console.log('filtering by',req.params.menutype);
     db.getspecials().then((list) =>{
@@ -161,7 +164,7 @@ exports.show_specials=function(req,res){
     
 }
 
-
+//shows all dinner items on the Dinner Menu
 exports.show_dinner_menu=function(req,res){
     console.log('filtering by',req.params.menutype);
     db.getdinnermenu().then((list) =>{
@@ -175,6 +178,7 @@ exports.show_dinner_menu=function(req,res){
     
 }
 
+//Posts a new menu item to db
 exports.post_new_menu_item= function(req,res){
     console.log('processing post_new_menu_item controller');
     db.addItem(req.body.menu, req.body.DishName,req.body.Description, req.body.allergens,req.body.price,req.body.active);
@@ -183,30 +187,22 @@ exports.post_new_menu_item= function(req,res){
     ;
 
 }
-/*exports.specials=function(req,res){
-    res.render("Specials",{
-        'title': 'Specials Menu',
-        'Menuitems':[{
-            'menu':'ChefSpecial',
-            'DishName': 'Meat Feast Pizza',
-            'Description': 'Pork Sausage, Salami, Onion, Beef Meatballs all on top of our classic tomato sauce, and buffalo mozzarella. Cooked to perfection in our pizza oven.',
-            'allergy': 'SF',
-            'price': '15.99',
-            'active': 'true'
-        }]
-});
-         };
-exports.dinner=function(req,res){
-    res.render("DinnerMenu",{
-        'title': 'Dinner Menu',
-        'Menuitems':[{
-            'menu':'DinnerMenu',
-            'DishName': 'Vegan Macaroni Al fromaggio',
-            'Description': 'Vegan elbow macaroni pasta, served with a vegan bechamel sauce cooked in our pizza oven for a golden top',
-            'allergy': 'VG',
-            'price': '10.99',
-            'active': 'true'
-        }]
-});
-         };
-*/
+
+//Implementing a call back functionality using User Model and redirect to /login
+exports.post_new_user = function(req, res) {
+    const user = req.body.username;
+    const password = req.body.pass;
+    if (!user || !password) {
+    res.send(401, 'no user or no password');
+    return;
+    }
+    userDao.lookup(user, function(err, u) {
+    if (u) {
+    res.send(401, "User exists:", user);
+    return;
+    }
+    userDao.create(user, password);
+    console.log("register user", user, "password", password);
+    res.redirect('/login');
+    });
+    } 

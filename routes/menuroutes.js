@@ -12,7 +12,9 @@ router.get('/about', controller.about);
 router.get('/lunch/:menutype', controller.show_lunch_menu);
 router.get('/specials/:menutype', controller.show_specials);
 router.get('/dinnermenu/:menutype', controller.show_dinner_menu);
-
+router.get('/register',controller.show_register_page);
+router.post('/register', controller.post_new_user);
+router.get('/login',controller.show_login);
 
 
 

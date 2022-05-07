@@ -22,9 +22,16 @@
    }
 
 .text-left{
-  float: left;
+  position:absolute;
+  left:0px;
+  top:3px;
 }
 
+.text-left2{
+  position: absolute;
+  left: 115px ;
+  top: 3px;
+}
 .text-right-menu{
   float:right;
 }

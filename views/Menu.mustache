@@ -1,5 +1,26 @@
 <html lang="en">
-    <head>{{>header}}</head>
+    <head>{{>header}} 
+            <div class="text-right">
+            {{^user}}
+            <a id="login" href="/register" class="btn btn-primary">
+            Register
+            </a>
+            <a id="login" href="/login" class="btn btn-primary">
+            Sign in
+            </a>
+            </div>
+            {{/user}}
+            {{#user}}
+            <div class="text-left">
+            <a id="logout" href="/logout" class="btn btn-primary">
+            Sign out
+            </a>
+            <div class="text-right2">
+            <a id="menuform" href='/menuform' class="btn btn-primary">
+            Add New Menu Item
+            </div>
+            {{/user}}
+          </head>
      <body class="container">  
         <h1><mark class="black">{{title}}</mark></h1>
         </p>
