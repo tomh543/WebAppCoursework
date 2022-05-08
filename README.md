@@ -3,9 +3,10 @@ Instructions for Website use
 install all neccessary nodes etc - npm install
  command to run - node index.js
  website will run at localhost localhost:3000
+ for deployment onto heroku uninstall and reinstall of bcrypt was required
 
- The website is hosted here:
-
+ The website is hosted here: https://s1311448webapp.herokuapp.com
+ 
  When going to the website you should land on an About page, with links to Menu and Contact.
  About us page shows the restaurant philosophy, story and vision for the restaurant
  Contact Page shows how to get in touch, the address of the restaurant and also the opening hours
@@ -35,6 +36,10 @@ Add New Item - Adds New Menu Item to database, if active field set to false will
 Update Item - Form template and functionality code implemented, however issues when submitting seem to prevent updating of db
 Delete Item - Form template and functionality code  implemented, however issues when submitting seem to prevent updating of db
 Log Out - Will remove authenticated cookie from user and put them back to landing page.
+
+Changes from Development Plans
+-Staff View changed, as there was an issue getting the rows to work post login, however it made more sense this was a more functional layout instead of a messy 3 menu view. In addition this was changed on the menu page, for the same reason. Having 3 menus on one page would have been cluttered and messy. This is why the menu view has a plain white background and white text also as users would want the most readability as possible.
+
 
 A menu.css file was created to work in tandem with the stylesheet "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css".
 This was to give more flexibility with likes of background image and making the design similar to the design document.
